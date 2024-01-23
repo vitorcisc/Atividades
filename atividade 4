@@ -1,0 +1,96 @@
+print('Bem-vindo ao software de gerenciamento de pessoas de!')
+
+#Inicialização das variáveis
+lista_colaboradores = []
+id_global = 0
+
+#função para cadastrar um colaborador
+def cadastrar_colaborador(id):
+    global id_global
+    nome = input("Digite o nome do colaborador: ")
+    setor = input("Digite o setor do colaborador: ")
+    salario = float(input("Digite o salário do colaborador: "))
+
+    colaborador = {
+        "id": id,
+        "nome": nome,
+        "setor": setor,
+        "salario": salario
+    }
+
+    lista_colaboradores.append(colaborador)
+    id_global += 1
+
+#função para consultar colaboradores
+def consultar_colaborador():
+    opcao = input("Qual opção deseja?\n1. Consultar Todos\n2. Consultar por Id\n3. Consultar por Setor\n4. Retornar ao menu\n")
+
+    if opcao == "1":
+        for colaborador in lista_colaboradores:
+            print(colaborador)
+    elif opcao == "2":
+        id_consulta = int(input("Digite o ID do colaborador a ser consultado: "))
+        for colaborador in lista_colaboradores:
+            if colaborador["id"] == id_consulta:
+                print(colaborador)
+                break
+        else:
+            print("Colaborador não encontrado.")
+    elif opcao == "3":
+        setor_consulta = input("Digite o setor a ser consultado: ")
+        for colaborador in lista_colaboradores:
+            if colaborador["setor"] == setor_consulta:
+                print(colaborador)
+    elif opcao == "4":
+        return
+
+#função para remover um colaborador
+def remover_colaborador():
+    id_remocao = int(input("Digite o ID do colaborador a ser removido: "))
+    for colaborador in lista_colaboradores:
+        if colaborador["id"] == id_remocao:
+            lista_colaboradores.remove(colaborador)
+            print("Colaborador removido com sucesso.")
+            break
+    else:
+        print("Colaborador não encontrado.")
+
+#Estrutura do menu
+while True:
+    print("\nMenu:")
+    print("1. Cadastrar Colaborador")
+    print("2. Consultar Colaborador")
+    print("3. Remover Colaborador")
+    print("4. Encerrar Programa")
+
+    opcao_menu = input("Escolha uma opção: ")
+
+    if opcao_menu == "1":
+        cadastrar_colaborador(id_global)
+    elif opcao_menu == "2":
+        consultar_colaborador()
+    elif opcao_menu == "3":
+        remover_colaborador()
+    elif opcao_menu == "4":
+        print("Encerrando o programa.")
+        break
+    else:
+        print("Opção inválida.")
+
+#Cadastro de colaboradores
+cadastrar_colaborador(id_global)
+cadastrar_colaborador(id_global)
+cadastrar_colaborador(id_global)
+
+#Consulta de todos os colaboradores
+consultar_colaborador()
+
+#Consulta por código de um dos colaboradores
+consultar_colaborador()
+
+#Consulta por setor
+consultar_colaborador()
+
+#Remoção e consulta após remoção
+remover_colaborador()
+consultar_colaborador()
