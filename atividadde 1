@@ -1,0 +1,16 @@
+print('Ben-vido a loja do Vitor Ciscoto')
+valor_produto = float(input('Digite o valor do produto desejado: '))
+qtd_produto = int(input('Digite a quantidade do produto desejado: '))
+desconto_produto = 0
+if qtd_produto <:
+  desconto_produto = 0.00
+elif (qtd_produto >= 5) and (qtd_produto < 20):
+  desconto_produto =   0.03
+elif (qtd_produto >= 20) and (qtd_produto < 100):
+  desconto_produto =   0.06
+else:
+  desconto_produto = 0.10
+total_sem_desconto = valor_produto * qtd_produto
+print('O valor do produto sem desconto é : R% {}'.format(total_sem_desconto))
+total_com_desconto = total_sem_desconto - total_sem_desconto * desconto_produto
+print('O valor do produto com desconto é : R% {}'.format(total_com_desconto))
