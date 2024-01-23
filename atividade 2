@@ -1,0 +1,66 @@
+print("Bem-vindo, queetão 2, Vitor ciscoto !") 
+def borda(s1):
+  tam = len(s1)
+  if tam:
+    print('+','-'* tam , '+')
+    print('|',s1,'|')
+    print('+','-'* tam , '+')
+
+# menu
+borda('nº de bolas: 1, 2 , 3')
+borda('Sabores (Tr) Tradicional , (Pr) Premium , (Es) especial')
+borda('tr 1 = R$ 6,tr 1 = R$ 7, tr 1 = R$ 8 \n'+
+      'Es 1 = R$ 10,Es 2 = R$ 12,Es 3 = R$ 14, '+
+       'Pr 1=R$ 14,Pr 2 =R$ 17,Pr 3 =R$ 20')
+#Variável para armazenar o valor total da compra
+total = 0
+
+#Programa principal
+while True:
+    #Entrada do sabor e quantidade de bolas
+    sabor = input("Digite o sabor do sorvete (tr) para tradicional, (pr) para premium, (es) para especial: ")
+    quantidade = int(input("Digite a quantidade de bolas de sorvete (1, 2 ou 3): "))
+
+    #Verificação de quantidade de bolas válida
+    if quantidade not in [1, 2, 3]:
+        print("Quantidade de Bolas de Sorvete Inválida")
+        continue  #Volta ao inicio do loop
+
+
+    #Verificação de sabor valido
+    if sabor not in ('tr', 'pr', 'es'):
+      print("Sabor de Sorvete Invalido")
+      continue  #Volta ao inicio do laço
+
+
+    #Calculo do valor do pedido
+    if quantidade == 1:
+        if sabor == 'tr':
+            total += 6
+        elif sabor == 'pr':
+            total += 7
+        elif sabor == 'es':
+            total += 8
+    elif quantidade == 2:
+        if sabor == 'tr':
+            total += 11
+        elif sabor == 'pr':
+            total += 13
+        elif sabor == 'es':
+            total += 15
+    elif quantidade == 3:
+        if sabor == 'tr':
+            total += 15
+        elif sabor == 'pr':
+            total += 18
+        elif sabor == 'es':
+            total += 21
+
+
+    #Verificação se o cliente deseja mais intens
+    mais_itens = input("Deseja pedir mais alguma coisa? (s) para sim, (n) para não): ")
+    if mais_itens == 'n':
+        break  # Sai do laço
+
+#Print do valor total
+print(f"Total a pagar: {total} reais.")#metodo antigo
