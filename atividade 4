@@ -1,4 +1,4 @@
-print('Bem-vindo ao software de gerenciamento de pessoas de!')
+print('Bem-vindo ao software de gerenciamento de pessoas !')
 
 #Inicialização das variáveis
 lista_colaboradores = []
