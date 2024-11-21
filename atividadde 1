@@ -1,4 +1,4 @@
-print('Ben-vido a loja do Vitor Ciscoto')
+print('Bem-vido a loja do Vitor Ciscoto')
 valor_produto = float(input('Digite o valor do produto desejado: '))
 qtd_produto = int(input('Digite a quantidade do produto desejado: '))
 desconto_produto = 0
